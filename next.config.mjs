@@ -21,6 +21,41 @@ const nextConfig = {
     parallelServerBuildTraces: true,
     parallelServerCompiles: true,
   },
+  async redirects() {
+    return [
+      {
+        source: '/what-we-offer',
+        destination: '/#services',
+        permanent: true,
+      },
+      {
+        source: '/gallery/:path*',
+        destination: '/#gallery',
+        permanent: true,
+      },
+      {
+        source: '/where-are-we',
+        destination: '/contact',
+        permanent: true,
+      },
+      {
+        source: '/faqs',
+        destination: '/faq',
+        permanent: true,
+      },
+      {
+        source: '/local-links',
+        destination: '/',
+        permanent: true,
+      },
+      {
+        source: '/testimonials',
+        destination: '/#testimonials',
+        permanent: true,
+      },
+      
+    ]
+  },
   async headers() {
     return [
       {

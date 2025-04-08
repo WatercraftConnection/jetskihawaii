@@ -189,7 +189,7 @@ export default function Home() {
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-20 relative" id="about">
+      <section className="py-20 relative" id="testimonials">
         <ParallaxBackground
           imageSrc="/bg_img1.webp"
           imageAlt="Ocean background"
@@ -274,7 +274,7 @@ export default function Home() {
       </section>
 
       {/* Gallery Section */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-white" id="gallery">
         <div className="container mx-auto px-4 text-center">
           <AnimateOnScroll direction="up">
             <h3 className="text-base font-medium mb-2 tracking-wider text-primary">{galleryContent.tagline}</h3>
@@ -461,7 +461,7 @@ export default function Home() {
       </section>
 
       {/* Call to Action */}
-      <section className="py-20 relative">
+      <section className="py-20 relative" id="contact">
         {/* Background Image */}
         <div className="absolute inset-0 overflow-hidden">
           <Image src="/cta-banner3.jpg" alt="Ocean background" fill className="object-cover" />
