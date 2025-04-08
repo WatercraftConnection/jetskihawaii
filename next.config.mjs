@@ -29,7 +29,7 @@ const nextConfig = {
         permanent: true,
       },
       {
-        source: '/gallery/:path*',
+        source: '/gallery',
         destination: '/#gallery',
         permanent: true,
       },
