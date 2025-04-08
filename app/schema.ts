@@ -95,12 +95,17 @@ export const serviceSchema = {
 
 export const reviewSchema = {
   "@context": "https://schema.org",
-  "@type": "Review",
+  "@type": "AggregateRating",
   "@id": "https://jetskihawaii.com/#reviews",
   "itemReviewed": {
     "@type": "LocalBusiness",
-    "@id": "https://jetskihawaii.com/#localbusiness"
+    "@id": "https://jetskihawaii.com/#localbusiness",
+    "name": companyInfo.name
   },
+  "ratingValue": "4.9",
+  "reviewCount": testimonialsContent.testimonials.length,
+  "bestRating": "5",
+  "worstRating": "1",
   "review": testimonialsContent.testimonials.map(testimonial => ({
     "@type": "Review",
     "reviewRating": {
