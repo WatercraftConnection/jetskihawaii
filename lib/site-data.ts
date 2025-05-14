@@ -541,7 +541,7 @@ export const companyInfo = {
         "Cancellations must be made 12 hours in advance for a full refund",
         "Weather-related cancellations will be rescheduled or refunded",
         "If you are unable to book a reservation during a time where we are typically open, then there is likely bad weather or high surf. Please reach out to us if you have any questions.",
-        "Each jet ski rental includes one jet ski unless more are added using the Quantity field. We rent out a maximum of 3 Jet Skis at a time.",
+        "We rent out a maximum of 3 Jet Skis per hour time slot. For groups wanting to rent more than 3 Jet Skis, simply schedule another appointment for the following hour.",
         "If you'd like to add extra people to ride on the same jet ski, select from the “Add to Appointment” options. You can add one additional passengers per ski.",
         "Need goggles? You can also add those to your appointment!",
       ],
