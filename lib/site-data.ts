@@ -543,7 +543,7 @@ export const companyInfo = {
         "If you are unable to book a reservation during a time where we are typically open, then there is likely bad weather or high surf. Please reach out to us if you have any questions.",
         "We rent out a maximum of 3 Jet Skis per hour time slot. For groups wanting to rent more than 3 Jet Skis, simply schedule another appointment for the following hour.",
         "If you'd like to add extra people to ride on the same jet ski, select from the “Add to Appointment” options. You can add one additional passengers per ski.",
-        "Need goggles? You can also add those to your appointment!",
+        "Must be 16+ years old to drive the Jet Skis.",
       ],
   
       // Questions section
