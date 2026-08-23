@@ -22,7 +22,23 @@
 
 # misc
 .DS_Store
+Thumbs.db
+
+# credentials — never commit
 *.pem
+*.key
+*.p12
+*.pfx
+
+# editors
+.vscode/
+.idea/
+*.swp
+
+# claude code (local tooling config — not the client's concern)
+# if you ever want to share project-level settings, commit .claude/settings.json
+# explicitly with `git add -f`
+.claude/
 
 # debug
 npm-debug.log*

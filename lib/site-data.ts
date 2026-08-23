@@ -404,7 +404,7 @@ export const companyInfo = {
       },
       {
         question: "Can I bring a passenger?",
-        answer: ["Yes, you can bring a passenger! Double your fun for an extra $50 per passenger."],
+        answer: ["Yes, you can bring a passenger! Double your fun for an extra $25 per passenger."],
       },
       {
         question: "Is there an age limit to ride a Jet Ski?",
