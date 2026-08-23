@@ -21,7 +21,7 @@ export default function NotFound() {
             <div className="flex flex-col sm:flex-row justify-center gap-6">
               <Link
                 href="/"
-                className="bg-secondary text-black font-medium py-3 px-8 rounded-full hover:bg-opacity-90 transition-all inline-flex items-center justify-center text-lg test-class"
+                className="bg-secondary text-black font-medium py-3 px-8 rounded-full hover:bg-opacity-90 transition-all inline-flex items-center justify-center text-lg test-class test-class-jb"
               >
                 Return to Shore
               </Link>
