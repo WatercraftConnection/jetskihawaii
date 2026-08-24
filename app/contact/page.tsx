@@ -8,7 +8,8 @@ import { YelpIcon } from "@/components/icons"
 import { siteMeta } from "@/lib/home-data"
 
 export const metadata: Metadata = {
-  title: "Contact | The Watercraft Connection",
+  alternates: { canonical: "/contact" },
+  title: "Contact",
   description:
     "Call, text or email The Watercraft Connection at Haleiwa Small Boat Harbor. Open Tuesday–Wednesday and Friday–Sunday, 11am–5pm.",
 }

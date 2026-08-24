@@ -8,7 +8,8 @@ import { Button, Wrap, SectionHeading, Eyebrow, Chip } from "@/components/rd/ui"
 import { aboutContent } from "@/lib/site-data"
 
 export const metadata: Metadata = {
-  title: "About | The Watercraft Connection",
+  alternates: { canonical: "/about" },
+  title: "About",
   description:
     "Locally owned and family-operated since 1987 — Oahu's longest-running jet ski rental company, launching from Haleiwa Small Boat Harbor.",
 }

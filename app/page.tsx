@@ -8,7 +8,10 @@ import { Gallery } from "@/components/rd/gallery"
 import { ClosingCta } from "@/components/rd/cta"
 
 export const metadata: Metadata = {
-  title: "Jet Ski & Kayak Rentals on Oahu's North Shore | The Watercraft Connection",
+  // absolute: the root layout's title template would otherwise append the
+  // business name a second time
+  title: { absolute: "Jet Ski & Kayak Rentals on Oahu's North Shore | The Watercraft Connection" },
+  alternates: { canonical: "/" },
   description:
     "Family-run jet ski and kayak rentals out of Haleiwa Small Boat Harbor since 1987. 45-minute open-ocean rides, instruction included, no experience needed.",
 }

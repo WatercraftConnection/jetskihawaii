@@ -3,10 +3,13 @@ import { Plus, Phone, ArrowRight } from "lucide-react"
 import { SiteShell } from "@/components/rd/shell"
 import { PageHero } from "@/components/rd/page-hero"
 import { Button, Wrap } from "@/components/rd/ui"
+import Script from "next/script"
 import { faqContent, companyInfo } from "@/lib/site-data"
+import { buildFaqSchema } from "@/app/schema"
 
 export const metadata: Metadata = {
-  title: "FAQ | The Watercraft Connection",
+  alternates: { canonical: "/faq" },
+  title: "FAQ",
   description:
     "Common questions about jet ski and kayak rentals at Haleiwa — experience needed, age limits, riding area, cameras, parking and reservations.",
 }
@@ -16,6 +19,13 @@ export default function FAQPage() {
 
   return (
     <SiteShell>
+      {/* FAQPage markup — these are real questions with real answers, so unlike
+          the old review markup this is legitimately eligible for rich results. */}
+      <Script
+        id="faq-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(buildFaqSchema(faqs)) }}
+      />
       <PageHero
         eyebrow="Good to know"
         title="Questions, answered"
