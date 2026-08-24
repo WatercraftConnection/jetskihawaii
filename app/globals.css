@@ -263,3 +263,93 @@
   height: auto !important;
   width: auto !important;
 }
+/* ============================================================
+   REDESIGN LAYER (2026-08)
+   New homepage design system. Scoped to new class names so the
+   legacy utilities above keep serving about/faq/contact/booking.
+   ============================================================ */
+
+/* --- grain: the texture that keeps flat gradients from looking synthetic --- */
+.rd-grain::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0.15;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E");
+}
+
+/* --- the hero mesh: layered radial blooms over a diagonal scrim ---
+   Three stacked gradients rather than one linear ramp. The radials give
+   depth and colour separation; the diagonal keeps the left column legible
+   over whatever the video is doing. */
+.rd-mesh {
+  background-image:
+    radial-gradient(70% 60% at 8% 12%, rgba(16, 146, 180, 0.55) 0%, rgba(13, 116, 144, 0.22) 45%, transparent 72%),
+    radial-gradient(65% 70% at 88% 88%, rgba(9, 53, 83, 0.75) 0%, rgba(6, 35, 57, 0.35) 50%, transparent 78%),
+    linear-gradient(104deg, rgba(4, 20, 36, 0.94) 0%, rgba(5, 28, 46, 0.82) 32%, rgba(6, 42, 68, 0.5) 62%, rgba(8, 58, 86, 0.28) 100%);
+  animation: rd-drift 26s ease-in-out infinite alternate;
+}
+
+@keyframes rd-drift {
+  from {
+    background-position: 0% 0%, 100% 100%, 0% 0%;
+  }
+  to {
+    background-position: 12% 8%, 88% 92%, 0% 0%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rd-mesh {
+    animation: none;
+  }
+}
+
+/* --- bottom fade so the hero hands off cleanly to the next section --- */
+.rd-fade-bottom {
+  background-image: linear-gradient(to bottom, transparent 55%, rgba(4, 20, 36, 0.55) 82%, #f6f9fb 100%);
+}
+
+/* --- dark panel used by the charter block and CTA --- */
+.rd-panel-deep {
+  background-image:
+    radial-gradient(80% 120% at 90% 10%, rgba(16, 146, 180, 0.35) 0%, transparent 60%),
+    linear-gradient(115deg, #062339 0%, #093553 48%, #0d7490 130%);
+}
+
+/* --- gallery: varied grid instead of a uniform contact sheet --- */
+.rd-gallery {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 150px;
+  gap: 0.85rem;
+}
+.rd-gallery > *:nth-child(1) {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+.rd-gallery > *:nth-child(6) {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+@media (max-width: 900px) {
+  .rd-gallery {
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 165px;
+    gap: 0.6rem;
+  }
+  .rd-gallery > *:nth-child(6) {
+    grid-column: span 2;
+    grid-row: span 1;
+  }
+}
+
+/* --- focus ring consistent with the new palette --- */
+.rd-focus:focus-visible {
+  outline: 2px solid #7dd3e8;
+  outline-offset: 2px;
+}

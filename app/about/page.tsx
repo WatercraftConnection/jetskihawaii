@@ -1,136 +1,142 @@
+import type { Metadata } from "next"
 import Image from "next/image"
-import Link from "next/link"
-
-// Import site data
+import { ShieldCheck, HeartHandshake, Leaf, ArrowRight } from "lucide-react"
+import type { LucideIcon } from "lucide-react"
+import { SiteShell } from "@/components/rd/shell"
+import { PageHero } from "@/components/rd/page-hero"
+import { Button, Wrap, SectionHeading, Eyebrow, Chip } from "@/components/rd/ui"
 import { aboutContent } from "@/lib/site-data"
 
-// Update imports to include our new PageLayout component
-import { PageLayout } from "@/components/page-layout"
+export const metadata: Metadata = {
+  title: "About | The Watercraft Connection",
+  description:
+    "Locally owned and family-operated since 1987 — Oahu's longest-running jet ski rental company, launching from Haleiwa Small Boat Harbor.",
+}
 
-// Replace the entire component with:
+const valueIcons: LucideIcon[] = [ShieldCheck, HeartHandshake, Leaf]
+
 export default function AboutPage() {
-  return (
-    <PageLayout>
-      {/* Hero Banner Section */}
-      <div className="relative h-[250px] w-full">
-        {/* Background Image */}
-        <Image
-          src="/hero.webp"
-          alt="About Us Banner"
-          fill
-          className="object-cover"
-          priority
-        />
-        {/* Dark Overlay */}
-        <div className="absolute inset-0 bg-black/50" />
-        {/* Content Container */}
-        <div className="relative h-full flex items-center justify-center">
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-8 text-center max-w-4xl px-4 mb-0">
-            {aboutContent.heading}
-          </h1>
-        </div>
-      </div>
+  const { story, values, team, cta } = aboutContent
 
-      <div className="container mx-auto px-4 py-12">
-        {/* Main Content Section */}
-        <div className="max-w-6xl mx-auto mb-16">
-          <div className="grid md:grid-cols-2 gap-10 items-center">
-            {/* Image on the left */}
-            <div className="relative h-[400px] md:h-[500px] rounded-lg overflow-hidden shadow-lg">
+  return (
+    <SiteShell>
+      <PageHero
+        eyebrow="Since 1987"
+        title="Oahu's oldest jet ski outfit, still run by the family"
+        sub="Nearly forty years on the same stretch of water, out of the same harbor."
+      />
+
+      {/* story — asymmetric, image right */}
+      <section className="bg-white py-16 sm:py-24">
+        <Wrap>
+          <div className="grid items-center gap-12 lg:grid-cols-[1.1fr_0.9fr]">
+            <div>
+              <Eyebrow className="mb-3 text-ocean">{story.tagline}</Eyebrow>
+              <h2 className="mb-6 font-display text-[clamp(1.9rem,3.4vw,2.7rem)] font-extrabold leading-[1.05] tracking-[-0.03em] text-navy">
+                {story.heading}
+              </h2>
+              <div className="space-y-5">
+                {story.content.map((para, i) => (
+                  <p key={i} className="text-[0.98rem] leading-relaxed text-slate2">
+                    {para}
+                  </p>
+                ))}
+              </div>
+              <div className="mt-8 flex flex-wrap gap-2">
+                <Chip>Family owned</Chip>
+                <Chip>Haleiwa Small Boat Harbor</Chip>
+                <Chip tone="slate">Open five days a week</Chip>
+              </div>
+            </div>
+
+            <div className="relative aspect-[4/5] overflow-hidden rounded-card border border-ink/10 shadow-card">
               <Image
-                src={aboutContent.story.image || "/placeholder.svg"}
-                alt="The Watercraft Connection Team"
+                src={story.image}
+                alt="The Watercraft Connection kiosk at Haleiwa Small Boat Harbor"
                 fill
+                sizes="(max-width: 1024px) 100vw, 45vw"
                 className="object-cover"
               />
             </div>
-
-            {/* Content on the right */}
-            <div>
-              <div className="inline-block bg-primary/10 px-4 py-1.5 rounded-full mb-4">
-                <h3 className="text-sm font-medium tracking-wider text-primary">{aboutContent.story.tagline}</h3>
-              </div>
-              <h2 className="text-3xl font-bold text-primary mb-6">{aboutContent.story.heading}</h2>
-              <div className="space-y-4 text-gray-700">
-                {aboutContent.story.content.map((paragraph, index) => (
-                  <p key={index}>{paragraph}</p>
-                ))}
-              </div>
-            </div>
           </div>
-        </div>
+        </Wrap>
+      </section>
 
-        {/* Our Values Section */}
-        <div className="max-w-5xl mx-auto mb-16">
-          <div className="text-center mb-10">
-            <div className="inline-block bg-primary/10 px-4 py-1.5 rounded-full mb-4">
-              <h3 className="text-sm font-medium tracking-wider text-primary">{aboutContent.values.tagline}</h3>
-            </div>
-            <h2 className="text-3xl font-bold text-primary">{aboutContent.values.heading}</h2>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {/* Map through values */}
-            {aboutContent.values.list.map((value, index) => (
-              <div key={index} className="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
-                <div className="w-12 h-12 bg-secondary/20 rounded-full flex items-center justify-center mb-4">
-                  <svg className="w-6 h-6 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-                  </svg>
+      {/* values */}
+      <section className="bg-[#f6f9fb] py-16 sm:py-24">
+        <Wrap>
+          <SectionHeading eyebrow={values.tagline} title={values.heading} />
+          <div className="grid gap-5 md:grid-cols-3">
+            {values.list.map((value, i) => {
+              const Icon = valueIcons[i] ?? ShieldCheck
+              return (
+                <div
+                  key={value.title}
+                  className="rounded-card border border-ink/10 bg-white p-7 transition-[border-color,box-shadow] duration-300 hover:border-ocean/25 hover:shadow-card"
+                >
+                  <div className="mb-5 flex h-11 w-11 items-center justify-center rounded-btn bg-ocean/10 text-ocean">
+                    <Icon className="h-[22px] w-[22px]" />
+                  </div>
+                  <h3 className="mb-2 font-display text-[1.1rem] font-bold tracking-[-0.01em] text-navy">
+                    {value.title}
+                  </h3>
+                  <p className="text-[0.92rem] leading-relaxed text-slate2">{value.description}</p>
                 </div>
-                <h3 className="text-xl font-semibold mb-3 text-primary">{value.title}</h3>
-                <p className="text-gray-600">{value.description}</p>
-              </div>
-            ))}
+              )
+            })}
           </div>
-        </div>
+        </Wrap>
+      </section>
 
-        {/* Meet the Team Section */}
-        <div className="max-w-5xl mx-auto mb-16">
-          <div className="text-center mb-10">
-            <div className="inline-block bg-primary/10 px-4 py-1.5 rounded-full mb-4">
-              <h3 className="text-sm font-medium tracking-wider text-primary">{aboutContent.team.tagline}</h3>
-            </div>
-            <h2 className="text-3xl font-bold text-primary">{aboutContent.team.heading}</h2>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            {/* Map through team members */}
-            {aboutContent.team.members.map((member, index) => (
-              <div key={index} className="text-center">
-                <div className="relative h-64 w-64 mx-auto rounded-full overflow-hidden mb-4">
-                  <Image src={member.image || "/placeholder.svg"} alt={member.name} fill className="object-cover" />
-                </div>
-                <h3 className="text-lg font-semibold text-primary">{member.name}</h3>
-                <p className="text-gray-600">{member.title}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Call to Action Section - Matching the screenshot */}
-        <div className="text-center max-w-4xl mx-auto mt-20 mb-10">
-          <h3 className="text-3xl font-bold text-primary mb-10">{aboutContent.cta.heading}</h3>
-          <div className="flex flex-wrap justify-center gap-6">
-            {aboutContent.cta.buttons.map((button, index) => (
-              <Link
-                key={index}
-                href={button.href}
-                className={`${
-                  button.isPrimary
-                    ? "bg-secondary text-black"
-                    : button.isOutline
-                      ? "border-2 border-primary text-primary hover:bg-primary/5"
-                      : "bg-primary text-white hover:bg-primary/90"
-                } font-medium py-3 px-10 rounded-full transition-colors text-lg min-w-[200px]`}
+      {/* team */}
+      <section className="bg-white py-16 sm:py-24">
+        <Wrap>
+          <SectionHeading eyebrow={team.tagline} title={team.heading}>
+            The people who'll run your safety briefing and take you out.
+          </SectionHeading>
+          <div className="grid max-w-3xl gap-5 sm:grid-cols-2">
+            {team.members.map((member) => (
+              <div
+                key={member.name}
+                className="group relative aspect-[4/3] overflow-hidden rounded-card border border-ink/10 shadow-card"
               >
-                {button.text}
-              </Link>
+                <Image
+                  src={member.image}
+                  alt={member.name}
+                  fill
+                  sizes="(max-width: 640px) 100vw, 45vw"
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-abyss/75 via-abyss/10 to-transparent" />
+                <div className="absolute bottom-0 left-0 p-6">
+                  <p className="font-display text-[1.3rem] font-bold tracking-[-0.02em] text-white">{member.name}</p>
+                  {member.title ? <p className="text-[0.85rem] text-white/70">{member.title}</p> : null}
+                </div>
+              </div>
             ))}
           </div>
-        </div>
-      </div>
-    </PageLayout>
+        </Wrap>
+      </section>
+
+      {/* closing */}
+      <section className="rd-panel-deep rd-grain relative overflow-hidden py-16 sm:py-20">
+        <Wrap className="relative z-10">
+          <div className="flex flex-wrap items-center justify-between gap-8">
+            <h2 className="max-w-[20ch] font-display text-[clamp(1.7rem,3.4vw,2.4rem)] font-extrabold leading-[1.08] tracking-[-0.03em] text-white">
+              {cta.heading}
+            </h2>
+            <div className="flex flex-wrap gap-3">
+              <Button href="/booking" size="lg">
+                Book now
+                <ArrowRight className="h-[18px] w-[18px]" />
+              </Button>
+              <Button href="/faq" variant="bordered" size="lg">
+                Read the FAQ
+              </Button>
+            </div>
+          </div>
+        </Wrap>
+      </section>
+    </SiteShell>
   )
 }
-

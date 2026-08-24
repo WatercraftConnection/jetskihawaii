@@ -11,10 +11,15 @@ const nextConfig = {
     ignoreDuringBuilds: true,
   },
   typescript: {
-    ignoreBuildErrors: true,
+    // Was true from the v0 scaffold, which meant real type errors shipped
+    // silently. The tree is clean now, so let the build fail loudly instead.
+    ignoreBuildErrors: false,
   },
   images: {
-    unoptimized: true,
+    // Optimization re-enabled. The homepage was shipping ~53MB of full-size
+    // assets because this was off; Next now serves resized AVIF/WebP per
+    // breakpoint. Watch the Hobby plan's image transformation quota.
+    formats: ["image/avif", "image/webp"],
   },
   experimental: {
     webpackBuildWorker: true,
