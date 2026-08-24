@@ -92,7 +92,7 @@ export const companyInfo = {
         description: "Explore the serene waters of Oahu",
         image: "/kayak-booking.jpg", // Replace with actual image path
         features: [
-          { icon: "Clock", text: "Flexible duration" },
+          { icon: "Clock", text: "One-hour rental" },
           { icon: "Users", text: "Single and tandem kayaks" },
           { icon: "Anchor", text: "Self-guided tours" },
         ],

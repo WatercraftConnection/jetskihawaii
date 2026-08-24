@@ -1,50 +1,56 @@
 import Link from "next/link"
-import Image from "next/image"
-import { PageLayout } from "@/components/page-layout"
+import { ArrowRight } from "lucide-react"
+import { SiteShell } from "@/components/rd/shell"
+import { PageHero } from "@/components/rd/page-hero"
+import { Button, Wrap } from "@/components/rd/ui"
 
 export default function NotFound() {
   return (
-    <PageLayout>
-      <div className="container mx-auto px-4 py-20">
-        <div className="max-w-3xl mx-auto text-center">
-          <div className="mb-8 relative">
-            <Image src="/logo-main.png" alt="Jet Ski Rentals Logo" width={120} height={120} className="mx-auto" />
-          </div>
+    <SiteShell>
+      <PageHero
+        eyebrow="404"
+        title="You've drifted off the map"
+        sub="That page doesn't exist. Here's the way back to shore."
+      />
 
-          <h1 className="text-5xl font-bold text-primary mb-6">404 - Page Not Found</h1>
-
-          <div className="bg-gray-50 p-8 rounded-lg shadow-sm mb-10">
-            <p className="text-xl text-gray-700 mb-6">
-              Looks like you've drifted into uncharted waters! The page you're looking for doesn't exist.
-            </p>
-
-            <div className="flex flex-col sm:flex-row justify-center gap-6">
-              <Link
-                href="/"
-                className="bg-secondary text-black font-medium py-3 px-8 rounded-full hover:bg-opacity-90 transition-all inline-flex items-center justify-center text-lg test-class test-class-jb"
-              >
-                Return to Shore
-              </Link>
-
-              <Link
-                href="/contact"
-                className="bg-primary text-white font-medium py-3 px-8 rounded-full hover:bg-opacity-90 transition-all inline-flex items-center justify-center text-lg"
-              >
-                Contact Us
-              </Link>
+      <section className="bg-white py-16 sm:py-24">
+        <Wrap>
+          <div className="max-w-2xl">
+            <div className="mb-10 flex flex-col gap-3 sm:flex-row">
+              <Button href="/" size="lg" className="justify-center">
+                Back to the homepage
+                <ArrowRight className="h-[18px] w-[18px]" />
+              </Button>
+              <Button href="/booking" variant="flat" size="lg" className="justify-center">
+                Book a rental
+              </Button>
             </div>
-          </div>
 
-          <div className="text-gray-600">
-            <p>
-              Need assistance? Call us at{" "}
-              <a href="tel:+18086378006" className="text-primary hover:underline">
-                +1 (808) 637-8006
-              </a>
-            </p>
+            <nav className="divide-y divide-ink/10 border-y border-ink/10">
+              {[
+                { href: "/#rentals", text: "Jet ski and kayak rentals", note: "What you can take out, and what it costs" },
+                { href: "/faq", text: "FAQ", note: "Age limits, riding area, parking, cameras" },
+                { href: "/about", text: "About", note: "Family-run at Haleiwa since 1990" },
+                { href: "/contact", text: "Contact", note: "Phone, email, hours and directions" },
+              ].map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className="group flex items-center justify-between gap-6 py-5 no-underline rd-focus"
+                >
+                  <span>
+                    <span className="block font-display text-[1.05rem] font-bold tracking-[-0.01em] text-navy transition-colors group-hover:text-ocean">
+                      {link.text}
+                    </span>
+                    <span className="mt-0.5 block text-[0.88rem] text-slate2">{link.note}</span>
+                  </span>
+                  <ArrowRight className="h-4 w-4 shrink-0 text-slate2 transition-transform duration-300 group-hover:translate-x-1 group-hover:text-ocean" />
+                </Link>
+              ))}
+            </nav>
           </div>
-        </div>
-      </div>
-    </PageLayout>
+        </Wrap>
+      </section>
+    </SiteShell>
   )
 }

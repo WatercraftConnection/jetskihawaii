@@ -1,6 +1,6 @@
 import type { ReactNode } from "react"
 import "./globals.css"
-import { montserrat, inter } from "./fonts"
+import { archivo, inter } from "./fonts"
 import { Analytics } from "@vercel/analytics/react"
 import Script from "next/script"
 import { organizationSchema, localBusinessSchema, serviceSchema, reviewSchema, websiteSchema } from "./schema"
@@ -38,7 +38,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className={`${montserrat.variable} ${inter.variable} font-sans`}>{children}<Analytics/></body>
+      <body className={`${archivo.variable} ${inter.variable} font-sans`}>{children}<Analytics/></body>
     </html>
   )
 }
