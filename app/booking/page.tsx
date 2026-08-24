@@ -6,7 +6,8 @@ import { Button, Wrap, Chip, Eyebrow } from "@/components/rd/ui"
 import { bookingContent, companyInfo } from "@/lib/site-data"
 
 export const metadata: Metadata = {
-  title: "Book a Rental | The Watercraft Connection",
+  alternates: { canonical: "/booking" },
+  title: "Book a Rental",
   description:
     "Reserve a jet ski or kayak at Haleiwa Small Boat Harbor. Pick your date and time — instruction and Coast Guard life jackets included.",
 }
