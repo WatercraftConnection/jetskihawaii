@@ -8,7 +8,7 @@ export const organizationSchema = {
   "url": "https://jetskihawaii.com",
   "logo": "https://jetskihawaii.com/logo-main.png",
   "description": companyInfo.description,
-  "foundingDate": "1990", // Based on "over 30 years" in about content
+  "foundingDate": "1987",
   "address": {
     "@type": "PostalAddress",
     "streetAddress": companyInfo.contact.address,

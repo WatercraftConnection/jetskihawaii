@@ -10,7 +10,7 @@ import { aboutContent } from "@/lib/site-data"
 export const metadata: Metadata = {
   title: "About | The Watercraft Connection",
   description:
-    "Locally owned and family-operated since 1990 — Oahu's longest-running jet ski rental company, launching from Haleiwa Small Boat Harbor.",
+    "Locally owned and family-operated since 1987 — Oahu's longest-running jet ski rental company, launching from Haleiwa Small Boat Harbor.",
 }
 
 const valueIcons: LucideIcon[] = [ShieldCheck, HeartHandshake, Leaf]
@@ -21,9 +21,9 @@ export default function AboutPage() {
   return (
     <SiteShell>
       <PageHero
-        eyebrow="Since 1990"
+        eyebrow="Since 1987"
         title="Oahu's oldest jet ski outfit, still run by the family"
-        sub="Thirty-plus years on the same stretch of water, out of the same harbor."
+        sub="Nearly forty years on the same stretch of water, out of the same harbor."
       />
 
       {/* story — asymmetric, image right */}

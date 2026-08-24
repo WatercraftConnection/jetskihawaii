@@ -10,7 +10,7 @@ import { ClosingCta } from "@/components/rd/cta"
 export const metadata: Metadata = {
   title: "Jet Ski & Kayak Rentals on Oahu's North Shore | The Watercraft Connection",
   description:
-    "Family-run jet ski and kayak rentals out of Haleiwa Small Boat Harbor since 1990. 45-minute open-ocean rides, instruction included, no experience needed.",
+    "Family-run jet ski and kayak rentals out of Haleiwa Small Boat Harbor since 1987. 45-minute open-ocean rides, instruction included, no experience needed.",
 }
 
 export default function Home() {

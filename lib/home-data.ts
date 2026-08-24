@@ -5,7 +5,7 @@
  * /about, /faq, /contact and /booking keep rendering off the original data.
  *
  * Every factual claim here traces back to the client's existing copy:
- * family-run since 1990, Oahu's longest-running jet ski operation, launching
+ * family-run since 1987, Oahu's longest-running jet ski operation, launching
  * from Haleiwa Small Boat Harbor, 45-minute rides, 16+ to drive, max 3 skis
  * per hour slot, +$25 per passenger, Coast Guard life jackets, instruction
  * included, closed Mondays and Thursdays.
@@ -32,12 +32,12 @@ export const heroContent = {
   // hero its one hit of yellow against the blue.
   headline: "45 minutes of",
   headlineAccent: "open ocean.",
-  sub: "Family-run out of Haleiwa Small Boat Harbor since 1990 — Oahu's longest-running jet ski outfit. Every rental includes instruction, gear, and a crew that's been reading this water for three decades.",
+  sub: "Family-run out of Haleiwa Small Boat Harbor since 1987 — Oahu's longest-running jet ski outfit. Every rental includes instruction, gear, and a crew that's been reading this water for nearly forty years.",
   primaryCta: { text: "Check availability", href: "/booking" },
   secondaryCta: { text: "Call us", href: "tel:+18086378006" },
   note: "Open Tue–Wed & Fri–Sun, 11am–5pm · last rental 4pm",
   stats: [
-    { value: "1990", unit: "", label: "Family run since" },
+    { value: "1987", unit: "", label: "Family run since" },
     { value: "45", unit: "min", label: "Time on the water" },
     { value: "Haleiwa", unit: "", label: "Small Boat Harbor" },
   ],

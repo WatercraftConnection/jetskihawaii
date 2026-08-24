@@ -26,7 +26,7 @@ export function SiteFooter() {
               </span>
             </div>
             <p className="mb-6 max-w-[38ch] text-sm leading-relaxed text-white/60">
-              Family-run jet ski and kayak rentals out of Haleiwa Small Boat Harbor since 1990.
+              Family-run jet ski and kayak rentals out of Haleiwa Small Boat Harbor since 1987.
             </p>
 
             <address className="space-y-3 not-italic">

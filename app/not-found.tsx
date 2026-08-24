@@ -30,7 +30,7 @@ export default function NotFound() {
               {[
                 { href: "/#rentals", text: "Jet ski and kayak rentals", note: "What you can take out, and what it costs" },
                 { href: "/faq", text: "FAQ", note: "Age limits, riding area, parking, cameras" },
-                { href: "/about", text: "About", note: "Family-run at Haleiwa since 1990" },
+                { href: "/about", text: "About", note: "Family-run at Haleiwa since 1987" },
                 { href: "/contact", text: "Contact", note: "Phone, email, hours and directions" },
               ].map((link) => (
                 <Link
