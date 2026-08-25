@@ -48,7 +48,7 @@ export default function ContactPage() {
                 href={siteMeta.mapsUrl}
                 external
                 value={`${siteMeta.street}, ${siteMeta.city}`}
-                note="At Haleiwa Small Boat Harbor, near Ali'i Beach and Puaena Point. Free parking at the dock."
+                note="At Haleiwa Small Boat Harbor, near Ali'i Beach and Haleiwa Beach Park. Free parking at the dock."
               />
 
               {/* hours */}

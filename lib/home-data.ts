@@ -32,7 +32,7 @@ export const heroContent = {
   // hero its one hit of yellow against the blue.
   headline: "45 minutes of",
   headlineAccent: "open ocean.",
-  sub: "Family-run out of Haleiwa Small Boat Harbor since 1987 — Oahu's longest-running jet ski outfit. Every rental includes instruction, gear, and a crew that's been reading this water for nearly forty years.",
+  sub: "Family-run out of Haleiwa Small Boat Harbor since 1987 — Oahu's longest-running jet ski outfit. Every rental includes instruction, gear, and a crew that's been riding these waters for nearly forty years.",
   primaryCta: { text: "Check availability", href: "/booking" },
   secondaryCta: { text: "Call us", href: "tel:+18086378006" },
   note: "Open Tue–Wed & Fri–Sun, 11am–5pm · last rental 4pm",
@@ -47,7 +47,7 @@ export const rentalsContent = {
   eyebrow: "Haleiwa Small Boat Harbor",
   heading: "What you can take out",
   intro:
-    "Two ways onto the water, both launching a half mile off Ali'i Beach. Instruction and Coast Guard life jackets come with either one.",
+    "We offer jet ski and kayak rentals, so you have a choice of two ways to have some fun on the water. Both launch from our dock at Haleiwa Small Boat Harbor.",
   items: [
     {
       id: "jet-ski",
@@ -98,7 +98,7 @@ export const experienceContent = {
   eyebrow: "What's included",
   heading: "Everything comes with the rental",
   intro:
-    "One price, no upsell at the dock. The only extras are goggles and waterproof bags if you want them.",
+    "One price, no upselling at the dock. The only extras are goggles and waterproof bags if you want them.",
   // Consolidated from the old eight-card grid plus the six-item checklist.
   // Kept to five things that are actually differentiators.
   items: [
@@ -110,7 +110,7 @@ export const experienceContent = {
     {
       icon: "Waves",
       title: "Real open ocean",
-      body: "Our permitted area sits a half mile to a mile off Haleiwa Beach Park — not a roped-off lagoon.",
+      body: "Our permitted area sits a half mile to a mile off Haleiwa Beach Park.",
     },
     {
       icon: "Turtle",
@@ -125,7 +125,7 @@ export const experienceContent = {
     {
       icon: "MapPin",
       title: "Easy to get to",
-      body: "Haleiwa Small Boat Harbor, minutes from Ali'i Beach and Puaena Point. Free parking at the dock.",
+      body: "Haleiwa Small Boat Harbor, minutes from Ali'i Beach and Haleiwa Beach Park. Free parking at the dock.",
     },
   ],
 }
