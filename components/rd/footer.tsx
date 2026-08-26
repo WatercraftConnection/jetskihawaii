@@ -129,15 +129,21 @@ export function SiteFooter() {
           <p>
             © {new Date().getFullYear()} {siteMeta.name}
           </p>
+          {/*
+            The whole phrase is the link, not just the word "RidgeX" — the
+            drawn rule and the arrow need the full run of text to travel
+            across, and it matches the same credit on investcalhoun.org.
+            The static `underline` utility came off: .credit-link draws its
+            own rule, and the native one would double it.
+          */}
           <p>
-            Website by{" "}
             <a
-              href="https://tjordanbenn.com/"
+              href="https://www.ridgexventures.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="underline transition-colors hover:text-white/70"
+              className="credit-link font-medium text-white/60 transition-colors hover:text-[#F98A23] rd-focus"
             >
-              Jordan Bennett
+              Site Built by RidgeX
             </a>
           </p>
         </div>
